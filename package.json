@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-simple-node-logger",     "homepage": "https://github.com/npmtest/node-npmtest-simple-node-logger",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-simple-node-logger.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [simple-node-logger (v0.93.17)](https://github.com/darrylwest/simple-node-logger)  [![npm package](https://img.shields.io/npm/v/npmtest-simple-node-logger.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-simple-node-logger) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-simple-node-logger.svg)](https://travis-ci.org/npmtest/node-npmtest-simple-node-logger)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-simple-node-logger",
+    "keywords": [
+        "coverage",
+        "test",
+        "simple-node-logger"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_simple_node_logger.js",
+    "name": "npmtest-simple-node-logger",
+    "nameAlias": "npmtest_simple_node_logger",
+    "nameOriginal": "npmtest-simple-node-logger",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-simple-node-logger.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.24"
+}
